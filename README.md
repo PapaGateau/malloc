@@ -16,9 +16,9 @@ void					show_alloc_mem(void);
 ### Build
 From root directory:
 ```bash
-make
-make clean
-make fclean
+    make
+    make clean
+    make fclean
 ```
 ### Testing
 Building this project creates a shared library ```libft_malloc.so```  
@@ -53,5 +53,5 @@ malloc_size = (size + 15) & ~15;
 ```
 
 ## Useful links
-C dynamic memory allocation https://en.wikipedia.org/wiki/C_dynamic_memory_allocation  
-Malloc and memory alignment https://stackoverflow.com/questions/8575822/which-guarantees-does-malloc-make-about-memory-alignment#8575954  
+[C dynamic memory allocation](https://en.wikipedia.org/wiki/C_dynamic_memory_allocation)  
+[Malloc and memory alignment](https://stackoverflow.com/questions/8575822/which-guarantees-does-malloc-make-about-memory-alignment#8575954)
