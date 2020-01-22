@@ -1,5 +1,6 @@
 # Malloc
 C implementation of the malloc library using mmap and munmap.  
+This project is a great introduction memory management and dynamic memory allocation.
 
 ## Functions
 ```c
@@ -19,9 +20,9 @@ From root directory:
     make clean
     make fclean
 
-### Use
+### Testing
 Building this project creates a shared library ```libft_malloc.so```  
-Using the run.sh script we can force the use of this library:  
+Using the run.sh we can run any command and force it to use our library:
 
     ./run.sh ls
     ./run.sh vim
@@ -32,15 +33,21 @@ Using the run.sh script we can force the use of this library:
 
 ```c
 #include <sys/mann.h>
-void mmap(void addr, size_t len, int prot, int flags, int fd, off_t offset);
+void *mmap(void *addr, size_t len, int prot, int flags, int fd, off_t offset);
 ```
 
-mmap() is a system call that allows us to allocate memory ranges of size len.
-
+mmap() is a system call that returns the starting address of a memory region of size len.  
+However system calls are time consuming, and processes can request memory very frequently.  This is where malloc() comes in. By using mmap() to allocate heaps dedicated to memory allocations of different sizes, and dividing these heaps into blocks to be returned by malloc, performance is greatly improved.
 
 ### Features
+defragmentation
+multi thread safe
+inclusion of additional malloc library functions (calloc reallocf)
 
 ## Takeaways
-importance of memory alignment
+purpose of malloc (reducing expensive system calls by preallocating memory)
+importance of memory alignment (memory corruption)
 
-## Resources
+## Useful links
+C dynamic memory allocation https://en.wikipedia.org/wiki/C_dynamic_memory_allocation
+Malloc and memory alignment https://stackoverflow.com/questions/8575822/which-guarantees-does-malloc-make-about-memory-alignment#8575954
