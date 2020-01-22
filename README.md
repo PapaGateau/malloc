@@ -1,4 +1,4 @@
-# malloc
+# Malloc
 C implementation of the malloc library using mmap and munmap.  
 
 ## Functions
@@ -8,7 +8,6 @@ void					*realloc(void *ptr, size_t size);
 void					free(void *ptr);
 void					*reallocf(void *ptr, size_t size);
 void					*calloc(size_t count, size_t size);
-
 void					show_alloc_mem(void);
 ```
 
@@ -20,11 +19,12 @@ from malloc directory:
 
 ## Use
 Building this project creates a shared library ```libft_malloc.so```  
-Using the run.sh script we can force the use of this library  
+Using the run.sh script we can force the use of this library:  
+```
     ./run.sh ls
     ./run.sh vim
     ./run.sh gdb
-
+```
 ## Process
 ```c
 #include <sys/mann.h>
