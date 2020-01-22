@@ -36,13 +36,13 @@ First we allocate a memory range using mmap()
 void *mmap(void *addr, size_t len, int prot, int flags, int fd, off_t offset);
 ```
 ```c
-typedef struct			s_range
+typedef struct  s_range
 {
-	char				padding[12];
-	enum e_range_type	type;
-	size_t				space;
-	struct s_range		*next;
-}						t_range;
+	char               padding[12];
+	enum e_range_type  type;
+	size_t             space;
+	struct s_range     *next;
+}                    t_range;
 ```
 
 ### Features
