@@ -44,6 +44,24 @@ typedef struct        s_range
 	struct s_range     *next;
 }                     t_range;
 ```
+For better performance, these ranges are used as heaps for allocations of different sizes. These heaps are defined by three different types: TINY, SMALL and LARGE
+```c
+# define TINY_MAX_BLOCK_SIZE 128
+# define TINY_RANGE_SIZE (4 * getpagesize())
+# define SMALL_MAX_BLOCK_SIZE 1024
+# define SMALL_RANGE_SIZE (32 * getpagesize())
+```
+The TINY and SMALL heaps are divided into blocks, that will will represent individual malloc calls
+```c
+typedef struct			s_block
+{
+	char				padding[12];
+	t_bool				freed;
+	size_t				size;
+	struct s_block		*next;
+}						t_block;
+```
+LARGE heaps, for malloc calls of size > SMALL_BLOCK_SIZE will only contain one block
 
 ### Features
 - Additional malloc library functions Calloc and Reallocf, allowing compatibility with most commands
