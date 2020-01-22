@@ -61,7 +61,7 @@ typedef struct			s_block
 	struct s_block		*next;
 }						t_block;
 ```
-LARGE heaps, for malloc calls of size > SMALL_BLOCK_SIZE will only contain one block
+LARGE ranges, for malloc calls of size > SMALL_BLOCK_SIZE will only contain one block
 
 ### Features
 - Additional malloc library functions Calloc and Reallocf, allowing compatibility with most commands
