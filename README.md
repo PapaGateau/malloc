@@ -51,7 +51,7 @@ For better performance, these ranges are used as heaps for allocations of differ
 # define SMALL_MAX_BLOCK_SIZE 1024
 # define SMALL_RANGE_SIZE (32 * getpagesize())
 ```
-The **TINY** and **SMALL** heaps are divided into **blocks**, that will will represent individual ```malloc``` calls
+The **TINY** and **SMALL** heaps are divided into **blocks**
 ```c
 typedef struct			s_block
 {
@@ -61,6 +61,7 @@ typedef struct			s_block
 	struct s_block		*next;
 }						t_block;
 ```
+Each **block** is composed of the block metadata/structure and followed by an available memory space. A pointer to this space is returned by ```malloc```
 **LARGE** ranges, for ```malloc``` calls of size > **SMALL_BLOCK_SIZE** will only contain one block
 
 ### Features
