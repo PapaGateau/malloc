@@ -12,7 +12,7 @@ void					show_alloc_mem(void);
 ```
 
 ## Build commands
-from malloc directory:
+From root directory:
 ```
 make
 make clean
@@ -26,6 +26,7 @@ Using the run.sh script we can force the use of this library:
 ./run.sh vim
 ./run.sh gdb
 ```
+
 ## Process
 ```c
 #include <sys/mann.h>
