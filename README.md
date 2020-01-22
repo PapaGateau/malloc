@@ -14,11 +14,11 @@ void					show_alloc_mem(void);
 ## Commands
 ### Build
 From root directory:
-```
-make
-make clean
-make fclean
-```
+
+    make
+    make clean
+    make fclean
+
 ### Use
 Building this project creates a shared library ```libft_malloc.so```  
 Using the run.sh script we can force the use of this library:  
