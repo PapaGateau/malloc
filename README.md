@@ -15,19 +15,19 @@ void					show_alloc_mem(void);
 ## Commands
 ### Build
 From root directory:
-
-    make
-    make clean
-    make fclean
-
+```bash
+make
+make clean
+make fclean
+```
 ### Testing
 Building this project creates a shared library ```libft_malloc.so```  
 Using the run.sh we can run any command and force it to use our library:
-
-    ./run.sh ls
-    ./run.sh vim
-    ./run.sh gdb # good for testing multithread
-
+```bash
+./run.sh ls
+./run.sh vim
+./run.sh gdb # good for testing multithread
+```
 ## Implementation
 ### Process
 
