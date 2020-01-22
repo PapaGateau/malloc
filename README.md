@@ -11,14 +11,15 @@ void					*calloc(size_t count, size_t size);
 void					show_alloc_mem(void);
 ```
 
-## Build commands
+## Commands
+### Build
 From root directory:
 ```
 make
 make clean
 make fclean
 ```
-## Use
+### Use
 Building this project creates a shared library ```libft_malloc.so```  
 Using the run.sh script we can force the use of this library:  
 ```
@@ -27,7 +28,8 @@ Using the run.sh script we can force the use of this library:
 ./run.sh gdb
 ```
 
-## Process
+## Implementation
+### Process
 
 ```c
 #include <sys/mann.h>
@@ -35,9 +37,11 @@ void mmap(void addr, size_t len, int prot, int flags, int fd, off_t offset);
 ```
 
 mmap() is a system call that allows us to allocate memory ranges of size len.
-However system calls are time consuming, and programs tend to allocate and deallocate memory often
 
-## Features
+
+### Features
 
 ## Takeaways
 importance of memory alignment
+
+## Resources
