@@ -40,11 +40,11 @@ Using the run.sh we can run any command and force it to use our library:
 
 ## Takeaways
 - Purpose of malloc:  
+mmap() is a system call that returns the starting address of a memory region of size len. However system calls are time consuming, and processes can request memory very frequently. This is where malloc() comes in. By using mmap() to preallocate heaps dedicated to memory allocations of different sizes, and dividing these heaps into blocks to be returned by malloc, performance is greatly improved.
 ```c
 #include <sys/mann.h>
 void *mmap(void *addr, size_t len, int prot, int flags, int fd, off_t offset);
 ```
-mmap() is a system call that returns the starting address of a memory region of size len. However system calls are time consuming, and processes can request memory very frequently. This is where malloc() comes in. By using mmap() to preallocate heaps dedicated to memory allocations of different sizes, and dividing these heaps into blocks to be returned by malloc, performance is greatly improved.
 - Importance of memory alignment:  
 Because of the way processors access memory (one word at a time, where word size depends on the processor), if the structures and memory ranges that make up mmap heaps are not perfectly aligned (relative to processor word size) some processes that make large numbers of allocations can cause memory corruption to occur.
 Simple padding on input size and structure size to align on 16 bytes can help prevent this issue.
