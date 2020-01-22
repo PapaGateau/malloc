@@ -13,6 +13,7 @@ void					show_alloc_mem(void);
 
 ## Build commands
 from malloc directory:
+
     make
     make clean
     make fclean
