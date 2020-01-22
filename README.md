@@ -13,18 +13,18 @@ void					show_alloc_mem(void);
 
 ## Build commands
 from malloc directory:
-
-    make
-    make clean
-    make fclean
-
+```
+make
+make clean
+make fclean
+```
 ## Use
 Building this project creates a shared library ```libft_malloc.so```  
 Using the run.sh script we can force the use of this library:  
 ```
-    ./run.sh ls
-    ./run.sh vim
-    ./run.sh gdb
+./run.sh ls
+./run.sh vim
+./run.sh gdb
 ```
 ## Process
 ```c
