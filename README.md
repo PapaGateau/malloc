@@ -30,13 +30,20 @@ Using the run.sh we can run any command and force it to use our library:
 ```
 ## Implementation
 ### Process
-
+The requested memory allocation size will determine the process
+```c
+# define TINY_MAX_BLOCK_SIZE 128
+# define TINY_RANGE_SIZE (4 * getpagesize())
+# define SMALL_MAX_BLOCK_SIZE 1024
+# define SMALL_RANGE_SIZE (32 * getpagesize())
+## Allocations greated than SMALL_RANGE_SIZE will have their own range
+```
 
 
 ### Features
-- Additional malloc library functions Calloc and Reallocf # allowing compatibility with most commands
-- Defragmentation of memory heaps to reduce munmap calls and improve performance # see free.c,
-- Multi thread safe # use of mutex at all entry points
+- Additional malloc library functions Calloc and Reallocf, allowing compatibility with most commands
+- Defragmentation of memory heaps to reduce munmap calls and improve performance (see free.c)
+- Multi thread safe (use of mutex at all entry points)
 
 ## Takeaways
 - Purpose of malloc:  
